@@ -1,2 +1,2 @@
 # windmill
-Writing an RPG that could be played in terminal
+Writing an RPG that could be played in browsers
