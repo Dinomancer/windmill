@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zodiac Battle</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<div id="game-container">
+    <div id="left-panel"></div>
+    <div id="right-panel">
+        <div id="log-window">
+            <div class="log-entry">游戏开始！</div>
+        </div>
+        <div id="action-panel">
+            <div id="controls">
+                <p>点击开始战斗：</p>
+                <button id="start-button">开始战斗</button>
+                <div id="target-buttons">
+                    <!-- 操作按钮插入在此 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="arrow-layer"></canvas>
+</div>
+
+<script src="./src/config.js"></script>
+<script src="./src/skills.js"></script>
+<script src="./src/character.js"></script>
+<script src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container {
+    width: 1040px;
+    height: 600px;
+    background-color: #e9ecef;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+#left-panel {
+    flex: 1;
+    background-color: #e9ecef;
+    padding: 20px;
+    margin-left: 80px;
+    border-right: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.character-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.character-card.active {
+    border-color: #4dabf7;
+    box-shadow: 0 0 8px rgba(77, 171, 247, 0.4);
+}
+
+.character-card.dead {
+    opacity: 0.5;
+    background-color: #f8f9fa;
+}
+
+.character-card.player {
+    border-left: 5px solid #339af0;
+}
+
+.character-card.enemy {
+    border-left: 5px solid #fa5252;
+}
+
+.char-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.char-name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.char-hp {
+    color: #495057;
+}
+
+#right-panel {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#log-window {
+    flex: 1;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.log-entry {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+#action-panel {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.panel-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#target-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #339af0;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #228be6;
+}
+
+button:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.hp-bar-container {
+    width: 100px;
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.hp-bar-fill {
+    height: 100%;
+    background-color: #51cf66;
+    transition: width 0.3s;
+}
+
+.hp-bar-fill.low {
+    background-color: #ff6b6b;
+}
+
+/* 悬停选择时可点击的敌人卡片 */
+.character-card.clickable {
+    cursor: pointer;
+    border-color: #fa5252;
+    background-color: #fff5f5;
+}
+.character-card.clickable:hover {
+    box-shadow: 0 0 10px rgba(250,82,82,0.5);
+}
+
+/* 箭头覆盖层 */
+#arrow-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
